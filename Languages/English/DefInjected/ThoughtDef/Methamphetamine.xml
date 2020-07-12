@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MethThought.stages.0.label>high on methamphetamine</MethThought.stages.0.label>
+  <MethThought.stages.0.description>I feel so good, I am the best, Let's do this!</MethThought.stages.0.description>
+
+
+  <!-- Meth comedown -->
+
+  <MethWithdrawal.stages.1.label>methamphetamine withdrawal</MethWithdrawal.stages.1.label>
+  <MethWithdrawal.stages.1.description>I'm so ill, I'm sweating and I can't concentrate, everything is mixed up.</MethWithdrawal.stages.1.description>
+
+
+</LanguageData>

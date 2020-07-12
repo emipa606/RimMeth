@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <BlueIceThought.stages.0.label>high on BlueIce</BlueIceThought.stages.0.label>
+  <BlueIceThought.stages.0.description>I feel pretty good, I am the best, Let's do this!</BlueIceThought.stages.0.description>
+
+
+  <!-- BlueIce addiction -->
+
+  <BlueIceWithdrawal.stages.1.label>BlueIce withdrawal</BlueIceWithdrawal.stages.1.label>
+  <BlueIceWithdrawal.stages.1.description>I'm so ill, I'm sweating and I can't concentrate, everything is mixed up.</BlueIceWithdrawal.stages.1.description>
+
+
+</LanguageData>

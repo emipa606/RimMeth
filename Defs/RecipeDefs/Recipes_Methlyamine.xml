@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>MakeMethylamine</defName>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <label>synthesise methylamine</label>
+    <description>Makes Methylamine, compound useful in drug production.</description>
+    <jobString>Making Methylamine</jobString>
+    <workAmount>2500</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Brewing</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <researchPrerequisite>WakeUpProduction</researchPrerequisite>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <Methylamine>2</Methylamine>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineHerbal</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <workSkill>Crafting</workSkill>
+    <skillRequirements>
+      <Crafting>8</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+</Defs>

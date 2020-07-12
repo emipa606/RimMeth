@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MethHigh.label>high on methamphetamine</MethHigh.label>
+  <MethHigh.description>high on methamphetamine</MethHigh.description>
+
+
+  <!-- Methamphetamine addiction -->
+
+  <MethTolerance.label>methamphetamine tolerance</MethTolerance.label>
+  <MethTolerance.description>methamphetamine tolerance</MethTolerance.description>
+
+
+  <!-- Meth comedown -->
+
+  <MethComeDown.label>Methamphetamine comedown</MethComeDown.label>
+  <MethComeDown.description>Methamphetamine comedown</MethComeDown.description>
+  <MethComeDown.stages.0.label>weak</MethComeDown.stages.0.label>
+  <MethComeDown.stages.1.label>moderate</MethComeDown.stages.1.label>
+  <MethComeDown.stages.2.label>strong</MethComeDown.stages.2.label>
+
+  <MethAddiction.label>methamphetamine addiction</MethAddiction.label>
+  <MethAddiction.description>methamphetamine addiction</MethAddiction.description>
+  <MethAddiction.stages.1.label>withdrawal</MethAddiction.stages.1.label>
+
+
+</LanguageData>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <BlueIceHigh.label>high on BlueIce</BlueIceHigh.label>
+  <BlueIceHigh.description>high on BlueIce</BlueIceHigh.description>
+
+
+  <!-- BlueIce addiction -->
+
+  <BlueIceTolerance.label>BlueIce tolerance</BlueIceTolerance.label>
+  <BlueIceTolerance.description>BlueIce tolerance</BlueIceTolerance.description>
+
+  <BlueIceAddiction.label>BlueIce addiction</BlueIceAddiction.label>
+  <BlueIceAddiction.description>BlueIce addiction</BlueIceAddiction.description>
+  <BlueIceAddiction.stages.1.label>withdrawal</BlueIceAddiction.stages.1.label>
+
+
+</LanguageData>

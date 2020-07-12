@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <BlueIce.label>BlueIce</BlueIce.label>
+  <BlueIce.description>BlueIce is a cheaper to make version of  the stimulant methamphetamine, it is slightly weaker. The dangers still persist however.</BlueIce.description>
+  <BlueIce.ingestible.ingestCommandString>Smoke {0}</BlueIce.ingestible.ingestCommandString>
+  <BlueIce.ingestible.ingestReportString>Smoking {0}.</BlueIce.ingestible.ingestReportString>
+
+
+</LanguageData>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <CarboxyHigh.label>high on 4-methylcarboxylamine</CarboxyHigh.label>
+  <CarboxyHigh.description>high on 4-methylcarboxylamine</CarboxyHigh.description>
+
+
+  <!-- 4-methylcarboxylamine addiction -->
+
+  <CarboxyTolerance.label>4-methylcarboxylamine tolerance</CarboxyTolerance.label>
+  <CarboxyTolerance.description>4-methylcarboxylamine tolerance</CarboxyTolerance.description>
+
+  <CarboxyAddiction.label>4-methylcarboxylamine addiction</CarboxyAddiction.label>
+  <CarboxyAddiction.description>4-methylcarboxylamine addiction</CarboxyAddiction.description>
+  <CarboxyAddiction.stages.1.label>withdrawal</CarboxyAddiction.stages.1.label>
+
+
+</LanguageData>

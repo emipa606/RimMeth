@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Methamphetamine.label>Methamphetamine</Methamphetamine.label>
+  <Methamphetamine.description>Methamphetamine is a stimulant that is similar to wake-up, but is much stronger and has a euphoric effect, it is also much more dangerous and addictive.</Methamphetamine.description>
+  <Methamphetamine.ingestible.ingestCommandString>Smoke {0}</Methamphetamine.ingestible.ingestCommandString>
+  <Methamphetamine.ingestible.ingestReportString>Smoking {0}.</Methamphetamine.ingestible.ingestReportString>
+
+
+</LanguageData>

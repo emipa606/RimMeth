@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>Methamphetamine</defName>
+    <label>Methamphetamine</label>
+    <description>Methamphetamine is a stimulant that is similar to wake-up, but is much stronger and has a euphoric effect, it is also much more dangerous and addictive.</description>
+    <graphicData>
+      <texPath>Things/Item/Drug/Methamphetamine</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>1500</WorkToMake>
+      <MarketValue>60</MarketValue>
+      <Mass>0.020</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <joy>0.60</joy>
+      <joyKind>Chemical</joyKind>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>Smoke_Flake</ingestEffect>
+      <ingestEffectEat>EatVegetarian</ingestEffectEat>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.23,0,0.065)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>MethHigh</hediffDef>
+          <severity>0.77</severity>
+          <toleranceChemical>Methamphetamine</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>1.5</offset>
+          <toleranceChemical>Methamphetamine</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>MethTolerance</hediffDef>
+          <severity>0.085</severity>
+          <divideByBodySize>true</divideByBodySize>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>WakeUpProduction</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>4</Neutroamine>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Methamphetamine</chemical>
+        <addictiveness>0.12</addictiveness>
+        <minToleranceToAddict>0.10</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.30</existingAddictionSeverityOffset>
+        <needLevelOffset>1</needLevelOffset>
+        <listOrder>210</listOrder>
+        <overdoseSeverityOffset>
+          <min>0.25</min>
+          <max>0.45</max>
+        </overdoseSeverityOffset>
+        <largeOverdoseChance>0.02</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef>
+    <defName>MethHigh</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>high on methamphetamine</label>
+    <description>high on methamphetamine</description>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.5</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <restFallFactor>0.8</restFallFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <WorkSpeedGlobal>0.6</WorkSpeedGlobal>
+        </statOffsets>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>HeartAttack</hediff>
+            <mtbDays>120</mtbDays>
+          </li>
+        </hediffGivers>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>MethThought</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>MethHigh</hediff>
+    <stages>
+      <li>
+        <label>high on methamphetamine</label>
+        <description>I feel so good, I am the best, Let's do this!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- Methamphetamine addiction -->
+  <ChemicalDef>
+    <defName>Methamphetamine</defName>
+    <label>methamphetamine</label>
+    <addictionHediff>MethAddiction</addictionHediff>
+    <toleranceHediff>MethTolerance</toleranceHediff>
+  </ChemicalDef>
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Chemical_Methamphetamine</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>methamphetamine</label>
+    <description>Because of an methamphetamine addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+    <listPriority>40</listPriority>
+  </NeedDef>
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>MethTolerance</defName>
+    <label>methamphetamine tolerance</label>
+    <description>methamphetamine tolerance</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.015</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>WakeUp</chemical>
+      </li>
+    </comps>
+    <hediffGivers>
+      <li Class="HediffGiver_RandomDrugEffect">
+        <hediff>ChemicalDamageSevere</hediff>
+        <minSeverity>0.60</minSeverity>
+        <baseMtbDays>120</baseMtbDays>
+        <partsToAffect>
+          <li>Brain</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffDef>
+  <!-- Meth comedown -->
+  <HediffDef>
+    <defName>MethComeDown</defName>
+    <hediffClass>Hediff_hangover</hediffClass>
+    <label>Methamphetamine comedown</label>
+    <description>Methamphetamine comedown</description>
+    <initialSeverity>1</initialSeverity>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <label>weak</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.03</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.8</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.15</minSeverity>
+        <label>moderate</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.7</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.40</minSeverity>
+        <label>strong</label>
+        <vomitMtbDays>0.4</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.18</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.6</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="AddictionBase">
+    <defName>MethAddiction</defName>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <label>methamphetamine addiction</label>
+    <description>methamphetamine addiction</description>
+    <causesNeed>Chemical_WakeUp</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.0333</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>withdrawal</label>
+        <restFallFactor>1.3</restFallFactor>
+        <socialFightChanceFactor>3.0</socialFightChanceFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.50</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.25</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Binging_DrugMajor</mentalState>
+            <mtbDays>40</mtbDays>
+          </li>
+          <li>
+            <mentalState>Wander_Psychotic</mentalState>
+            <mtbDays>10</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>MethWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>MethAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>methamphetamine withdrawal</label>
+        <description>I'm so ill, I'm sweating and I can't concentrate, everything is mixed up.</description>
+        <baseMoodEffect>-35</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
